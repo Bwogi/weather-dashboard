@@ -8,140 +8,78 @@
     <title>Weather Dashboard</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <nav class="blue darken-4">
-        <a href="./" class="brand-logo center">Weather Dashboard</a>
-    </nav>
+    <header class="row blue darken-3 ">
+        <h5 class="center">Weather Dashboard</h5>
+    </header>
+    <div class="row">
+        <aside class="col s3">
+            <h5>Search for a City:</h5>
+            <form>
+                <input type="text" placeholder="San Diego">
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </aside>
+        <main class="col s9">
+            <div class="today">
+                <h5 class="card-panel grey lighten-2" id="city">Atlanta <span id="date">(3/30/2021)</span></h5>
+                <p>Temp: 74.01°F</p>
+                <p>Wind: 6.67 MPH</p>
+                <p>Humidity: 46%</p>
+                <p>UV Index: <span id="uv-index">0.47</span></p>
+            </div>
+            <div class="5-day-forecast row">
+                <h5 class="card-panel grey lighten-2">5 day Forecast</h5>
 
-    <main>
-        <div class="row ">
-            <!-- new card  -->
-            <div class="col s12 m3">
-                <div class="card">
-                    <div class="card-content">
-                        <h4>Search for City</h4>
-                        <input type="text" placeholder="Los Angeles...">
-                        <button class="btn btn-block">Search</button>
-                    </div>
+                <div class="card blue-grey darken-1 col">
+                    <div class="card-title date">3/31/2021</div>
+                    <img src="#" alt="w-img">
+                    <p>Temp: 74.01°F</p>
+                    <p>Wind: 6.67 MPH</p>
+                    <p>Humidity: 46%</p>
+                </div>
 
+                <div class="card blue-grey darken-1 col">
+                    <div class="card-title date">3/31/2021</div>
+                    <img src="#" alt="w-img">
+                    <p>Temp: 74.01°F</p>
+                    <p>Wind: 6.67 MPH</p>
+                    <p>Humidity: 46%</p>
+                </div>
+                <div class="card blue-grey darken-1 col w">
+                    <div class="card-title date">3/31/2021</div>
+                    <img src="#" alt="w-img">
+                    <p>Temp: 74.01°F</p>
+                    <p>Wind: 6.67 MPH</p>
+                    <p>Humidity: 46%</p>
+                </div>
+                <div class="card blue-grey darken-1 col w">
+                    <div class="card-title date">3/31/2021</div>
+                    <img src="#" alt="w-img">
+                    <p>Temp: 74.01°F</p>
+                    <p>Wind: 6.67 MPH</p>
+                    <p>Humidity: 46%</p>
+                </div>
+                <div class="card blue-grey darken-1 col w">
+                    <div class="card-title date">3/31/2021</div>
+                    <img src="#" alt="w-img">
+                    <p>Temp: 74.01°F</p>
+                    <p>Wind: 6.67 MPH</p>
+                    <p>Humidity: 46%</p>
                 </div>
             </div>
-            <!-- new card end -->
 
-            <div class="col s12 m9">
-                <div class="row">
-                    <!-- new card  -->
-                    <div class="col s12 m12">
-                        <div class="card">
-                            <div class="card-content">
-                                <h4>Los Angeles</h4>
-                                <p>Temp: </p>
-                                <p>Wind: </p>
-                                <p>Humidity: </p>
-                                <p>UV index: </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- new card end -->
-
-                </div>
-                <div class="row">
-
-                    <div class="col s12 m12">
-                        <h5>5-day Forecast</h5>
-                        <div class="row">
-                            <!-- new card  -->
-                            <div class="col s12 m3">
-                                <div class="card small blue-grey darken-1">
-                                    <div class="card-content">
-                                        <h6>3/31/2021</h6>
-                                        <img src="#" alt="">
-                                        <p>Temp: </p>
-                                        <p>Wind: </p>
-                                        <p>Humidity: </p>
-                                        <p>UV index: </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- new card end -->
-                            <!-- new card  -->
-                            <div class="col s12 m3">
-                                <div class="card small blue-grey darken-1">
-                                    <div class="card-content">
-                                        <h6>3/31/2021</h6>
-                                        <img src="#" alt="">
-                                        <p>Temp: </p>
-                                        <p>Wind: </p>
-                                        <p>Humidity: </p>
-                                        <p>UV index: </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- new card end -->
-                            <!-- new card  -->
-                            <div class="col s12 m3">
-                                <div class="card small blue-grey darken-1">
-                                    <div class="card-content">
-                                        <h6>3/31/2021</h6>
-                                        <img src="#" alt="">
-                                        <p>Temp: </p>
-                                        <p>Wind: </p>
-                                        <p>Humidity: </p>
-                                        <p>UV index: </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- new card end -->
-                            <!-- new card  -->
-                            <div class="col s12 m3">
-                                <div class="card small blue-grey darken-1">
-                                    <div class="card-content">
-                                        <h6>3/31/2021</h6>
-                                        <img src="#" alt="">
-                                        <p>Temp: </p>
-                                        <p>Wind: </p>
-                                        <p>Humidity: </p>
-                                        <p>UV index: </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- new card end -->
-                            <!-- new card  -->
-                            <div class="col s12 m3">
-                                <div class="card small blue-grey darken-1">
-                                    <div class="card-content">
-                                        <h6>3/31/2021</h6>
-                                        <img src="#" alt="">
-                                        <p>Temp: </p>
-                                        <p>Wind: </p>
-                                        <p>Humidity: </p>
-                                        <p>UV index: </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- new card end -->
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-
-
-            </div>
-        </div>
-        </div>
-    </main>
-
-
-
-    <script src="./assets/js/script.js"></script>
+        </main>
+    </div>
+    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

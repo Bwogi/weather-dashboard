@@ -1,0 +1,10 @@
+header {
+    padding: 10px 0;
+    color: #fff;
+}
+
+.card {
+    margin: 0 10px 15px;
+    background-color: blue darken-1;
+    color: #fff;
+}
