@@ -20,9 +20,9 @@
     <div class="row">
         <aside class="col s3">
             <h5>Search for a City:</h5>
-            <form>
-                <input type="text" placeholder="San Diego">
-                <button class="btn" type="submit">Search</button>
+            <form id="form">
+                <input type="text" id="city" placeholder="San Diego">
+                <button class="btn" id="btn-search" type="submit">Search</button>
             </form>
         </aside>
         <main class="col s9">
@@ -33,7 +33,7 @@
                 <p>Humidity: 46%</p>
                 <p>UV Index: <span id="uv-index">0.47</span></p>
             </div>
-            <div class="5-day-forecast row">
+            <div class="5-day-forecast row" id="five-day-forecast" >
                 <h5 class="card-panel grey lighten-2">5 day Forecast</h5>
 
                 <div class="card blue-grey darken-1 col">
