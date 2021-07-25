@@ -14,25 +14,37 @@
 </head>
 
 <body>
+    <!-- heading -->
     <header class="row blue darken-3 ">
         <h5 class="center">Weather Dashboard</h5>
     </header>
+    <!-- heading end -->
+
     <div class="row">
+        <!-- side bar -->
         <aside class="col s3">
             <h5>Search for a City:</h5>
             <form id="form">
                 <input type="text" id="city" placeholder="San Diego">
                 <button class="btn" id="btn-search" type="submit">Search</button>
             </form>
+            <div class="history"></div>
         </aside>
+        <!-- side bar end -->
+
+        <!-- main content area  -->
         <main class="col s9">
+            <!-- city weather today  -->
             <div class="today">
                 <h5 class="card-panel grey lighten-2" id="city">Atlanta <span id="date">(3/30/2021)</span></h5>
-                <p>Temp: 74.01°F</p>
-                <p>Wind: 6.67 MPH</p>
-                <p>Humidity: 46%</p>
-                <p>UV Index: <span id="uv-index">0.47</span></p>
+                <h6>Temp: <span id="temp" >74.01°F</span> </h6>
+                <h6>Wind: <span id="windspeed" >6.67 MPH</span>  </h6>
+                <h6>Humidity: <span id="humidity" >46%</span> </h6>
+                <h6 id="uv-main">UV Index: <span id="uv-index">0.47</span></h6>
             </div>
+            <!-- city weather today end -->
+
+            <!-- five day forecast  -->
             <div class="5-day-forecast row" id="five-day-forecast" >
                 <h5 class="card-panel grey lighten-2">5 day Forecast</h5>
 
@@ -73,8 +85,11 @@
                     <p>Humidity: 46%</p>
                 </div>
             </div>
+            <!-- five day forecast end -->
 
         </main>
+        <!-- main content area end -->
+
     </div>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
