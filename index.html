@@ -1,85 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <link rel="stylesheet" href="./assets/css/mdb.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+  </head>
+  <body onload="displayButtons();">
+   <div class="container">
+   <header class="bg-primary" >
+      <nav class="navbar navbar-dark">
+          <h5>Weather Dashboard</h5>
+        
+      </nav>
+   </header>
+   <div class="container-fluid">
+     <!-- main row -->
+     <div class="row">
 
-<body>
-    <header class="row blue darken-3 ">
-        <h5 class="center">Weather Dashboard</h5>
-    </header>
-    <div class="row">
-        <aside class="col s3">
-            <h5>Search for a City:</h5>
-            <form id="form">
-                <input type="text" id="city" placeholder="San Diego">
-                <button class="btn" id="btn-search" type="submit">Search</button>
+       <!-- side  -->
+       <div class="col-md-3">
+          <div class="container">
+
+            <form id="form" class="card-body">
+                <h5 class="mb3">Search for City</h5>
+
+                <input name="cityname" id="theCity" type="text" placeholder ="Enter City name...">
+                <button  id = "search-btn" type="submit" class="btn btn-primary"> Search</button>
+
+                <div id ="history" class="hide">
+                    <h5 class="mb3">Search History</h5>
+                    <div id ="historyContainer"></div>
+                </div> 
             </form>
-        </aside>
-        <main class="col s9">
-            <div class="today">
-                <h5 class="card-panel grey lighten-2" id="city">Atlanta <span id="date">(3/30/2021)</span></h5>
-                <p>Temp: 74.01°F</p>
-                <p>Wind: 6.67 MPH</p>
-                <p>Humidity: 46%</p>
-                <p>UV Index: <span id="uv-index">0.47</span></p>
+
+          </div>
+      </div>
+       <!-- side end -->
+      
+       <!-- main content  -->
+       <div class="col-md-9">
+         <!-- current city  -->
+         <div class="row">
+          <div class="card today">
+            <div class="card-header bg-light">Current City</div>        
+            <div class="card-body bg-warning">  
+                <h5 class="card-title" id ="currentCity"> <span><img id ="weatherIcon"></img></span> </h5>  
+                <p id ="currentCityTemperature"></p>
+                <p id ="currentCityHumidity"></p>
+                <p id="currentCityWind"></p> 
+            <div  id ="uv-title"> <span id="currentCityUVIndex" class="badge"></span></div>
+
             </div>
-            <div class="5-day-forecast row" id="five-day-forecast" >
-                <h5 class="card-panel grey lighten-2">5 day Forecast</h5>
+            <div class="card-footer text-muted bg-light">Today's Weather</div>
+        </div>
+         </div>
+         <!-- current city end -->
 
-                <div class="card blue-grey darken-1 col">
-                    <div class="card-title date">3/31/2021</div>
-                    <img src="#" alt="w-img">
-                    <p>Temp: 74.01°F</p>
-                    <p>Wind: 6.67 MPH</p>
-                    <p>Humidity: 46%</p>
+         <!-- forecast  -->
+         <div class="row" id ="forecast-container">
+            <div class="hide" id ="theForecast">
+                <h4 class = "mb3" >Five Day Forecast</h4>               
+                <div class="card-container">
+                    <!-- day 1  -->
+                    <div class="card text-center">
+                        <div class="card-header bg-light" id ="date1"></div>        
+                        <div class="card-body bg-light" id="day-1">    
+                            <img id ="img1"></img>
+                            <p id ="temp1"></p>
+                            <p id ="hum1"></p>
+                            <p id="wind1"></p> 
+                        </div>
+                        <div class="card-footer text-muted bg-light">Day 1</div>
+                    </div>
+                    <!-- day 1 end -->
+
+                    <!-- day 2 -->
+                    <div class="card text-center">
+                        <div class="card-header bg-light" id ="date2"></div>        
+                        <div class="card-body bg-light" id="day-2">    
+                            <img id ="img2"></img>
+                            <p id ="temp2"></p>
+                            <p id ="hum2"></p>
+                            <p id="wind2"></p> 
+                        </div>
+                        <div class="card-footer text-muted bg-light">Day 2</div>
+                    </div>
+                    <!-- day 2 end  -->
+
+                    <!-- day 3 -->
+                    <div class="card text-center">
+                        <div class="card-header bg-light" id ="date3"></div>        
+                        <div class="card-body bg-light" id="day-3">    
+                            <img id ="img3"></img>
+                            <p id ="temp3"></p>
+                            <p id ="hum3"></p>
+                            <p id="wind3"></p> 
+                        </div>
+                        <div class="card-footer text-muted bg-light">Day 3</div>
+                    </div>
+                    <!-- day 3 end  -->
+
+                    <!-- day 4 -->
+                    <div class="card text-center">
+                        <div class="card-header bg-light" id ="date4"></div>        
+                        <div class="card-body bg-light" id="day-4">    
+                            <img id ="img4"></img>
+                            <p id ="temp4"></p>
+                            <p id ="hum4"></p>
+                            <p id="wind4"></p> 
+                        </div>
+                        <div class="card-footer text-muted bg-light">Day 4</div>
+                    </div>
+                    <!-- day 4 end  -->
+
+                    <!-- day 5 -->
+                    <div class="card text-center">
+                        <div class="card-header bg-light" id ="date5"></div>        
+                        <div class="card-body bg-light" id="day-5">    
+                            <img id ="img5"></img>
+                            <p id ="temp5"></p>
+                            <p id ="hum5"></p>
+                            <p id="wind5"></p> 
+                        </div>
+                        <div class="card-footer text-muted bg-light">Day 5</div>
+                    </div>
+                    <!-- day 5 end  -->
                 </div>
 
-                <div class="card blue-grey darken-1 col">
-                    <div class="card-title date">3/31/2021</div>
-                    <img src="#" alt="w-img">
-                    <p>Temp: 74.01°F</p>
-                    <p>Wind: 6.67 MPH</p>
-                    <p>Humidity: 46%</p>
-                </div>
-                <div class="card blue-grey darken-1 col w">
-                    <div class="card-title date">3/31/2021</div>
-                    <img src="#" alt="w-img">
-                    <p>Temp: 74.01°F</p>
-                    <p>Wind: 6.67 MPH</p>
-                    <p>Humidity: 46%</p>
-                </div>
-                <div class="card blue-grey darken-1 col w">
-                    <div class="card-title date">3/31/2021</div>
-                    <img src="#" alt="w-img">
-                    <p>Temp: 74.01°F</p>
-                    <p>Wind: 6.67 MPH</p>
-                    <p>Humidity: 46%</p>
-                </div>
-                <div class="card blue-grey darken-1 col w">
-                    <div class="card-title date">3/31/2021</div>
-                    <img src="#" alt="w-img">
-                    <p>Temp: 74.01°F</p>
-                    <p>Wind: 6.67 MPH</p>
-                    <p>Humidity: 46%</p>
-                </div>
-            </div>
+            </div> 
+        
+         </div>
+         <!-- forecast end -->
+   
+       </div>  
+       <!-- main content end -->
 
-        </main>
     </div>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
+     <!-- main row end -->
 
+
+
+
+
+
+
+
+
+ </div>
+    <!-- End your project here-->
+
+    <script type="text/javascript" src="./assets/js/mdb.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
