@@ -3,7 +3,7 @@
 * HTML
 * CSS
 * Java Script
-* Materialize CSS framework
+* MDBootstrap Framework
 * Server-side APIS 
 
 ## Pseudocode:
