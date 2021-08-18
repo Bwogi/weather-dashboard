@@ -187,20 +187,6 @@ var getWeatherInfo =function(city){
 
  }
 // history
-var formSubmitHandler = function(event) {
-    
-    event.preventDefault(); 
-    currentCityStored = theCityEl.value.trim();
-    currentCityStored.toLowerCase();
-    if (currentCityStored) {    
-        getWeatherInfo(currentCityStored) ;
-        theCityEl.value = ""; 
-      } else {
-        alert("Please enter a city name");
-      }
-  };
-formEl.addEventListener("submit",formSubmitHandler); 
-
 var displayButtons = function()
 {
     var citArr= cityLocalStore;
@@ -227,7 +213,19 @@ var saveInLocalStorage =function(city){
     localStorage.setItem("city",JSON.stringify(cityLocalStore));  
     displayButtons();   
 }
-
+var formSubmitHandler = function(event) {
+    
+    event.preventDefault(); 
+    currentCityStored = theCityEl.value.trim();
+    currentCityStored.toLowerCase();
+    if (currentCityStored) {    
+        getWeatherInfo(currentCityStored) ;
+        theCityEl.value = ""; 
+      } else {
+        alert("Please enter a city name");
+      }
+  };
+formEl.addEventListener("submit",formSubmitHandler); 
 
 var buttonClickHandler =function (event){
     event.preventDefault();
