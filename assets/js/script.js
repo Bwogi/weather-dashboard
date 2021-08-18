@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var formEl = document.getElementById("form"); 
 var theCityEl = document.getElementById("theCity"); 
 var historyContainerEl =document.querySelector("#historyContainer"); 
@@ -12,6 +13,14 @@ var currentCityUVIndexEl = document.querySelector("#currentCityUVIndex");
 var MY_API_KEY = "2d709df5b1075660c37a20358ca6ab57"; 
 var cityLocalStore = JSON.parse(localStorage.getItem("city")) ||[];
 var theArrayDay=[]; 
+=======
+var formEl = document.getElementById('form');
+// console.log(formEl)
+var historyContainerEl = document.querySelector('.history');
+var cityInputEl = document.getElementById('city');
+var fiveDayForecastEl = document.getElementById('five-day-forecast');
+
+>>>>>>> 63bd455cc4a0e4a0fdb5bd8503231e144974e92b
 
 
 //uvIndex colours
