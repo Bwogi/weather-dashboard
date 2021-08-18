@@ -6,6 +6,9 @@
 * MDBootstrap Framework
 * Server-side APIS 
 
+## Screenshot
+![screenshot](./assets/img/localStorageWeatherScreenshort.png?raw=true "Weather App Screenshot")
+
 ## Pseudocode:
 ## Data/API endpoints source :
 https://openweathermap.org/api
