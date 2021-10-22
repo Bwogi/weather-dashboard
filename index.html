@@ -2,161 +2,175 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Dashboard</title>
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-    <link rel="stylesheet" href="./assets/css/mdb.min.css" />
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <link rel="stylesheet" href="/assets/style/mdb.min.css" />
+    <!-- MDB PLUGINS -->
+    <link rel="stylesheet" href="/assets/style/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </head>
-  <body onload="displayButtons();">
-   <div class="container">
-   <header class="bg-primary" >
-      <nav class="navbar navbar-dark">
-          <h5>Weather Dashboard</h5>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarCenteredExample"
+          aria-controls="navbarCenteredExample"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+    
+        <!-- Collapsible wrapper -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarCenteredExample"
+        >
+        <h1>Weather Dashboard</h1>
         
-      </nav>
-   </header>
-   <div class="container-fluid">
-     <!-- main row -->
-     <div class="row">
-
-       <!-- side  -->
-       <div class="col-md-3">
-          <div class="container">
-
-            <form id="form" class="card-body">
-                <h5 class="mb3">Search for City</h5>
-
-                <input name="cityname" id="theCity" type="text" placeholder ="Enter City name...">
-                <button  id = "search-btn" type="submit" class="btn btn-primary"> Search</button>
-
-                <div id ="history" class="hide">
-                    <h5 class="mb3">Search History</h5>
-                    <div id ="historyContainer"></div>
-                </div> 
-            </form>
-
-          </div>
-      </div>
-       <!-- side end -->
-      
-       <!-- main content  -->
-       <div class="col-md-9">
-         <!-- current city  -->
-         <div class="row">
-          <div class="card today">
-            <div class="card-header bg-warning">Current City: <strong> <span id="currentCity"></span></strong></div>        
-            <div class="card-body bg-light">  
-                <h5 class="card-title"> <span><img id ="weatherIcon"></img></span> </h5>  
-                <p id ="currentCityTemperature"></p>
-                <p id ="currentCityHumidity"></p>
-                <p id="currentCityWind"></p> 
-            <div  id ="uv-title"> <span id="currentCityUVIndex" class="badge"></span></div>
-
-            </div>
-            <div class="card-footer text-muted bg-light">Today's Weather</div>
+          <!-- Left links -->
         </div>
-         </div>
-         <!-- current city end -->
-
-         <!-- forecast  -->
-         <div class="row" id ="forecast-container">
-            <div class="hide" id ="theForecast">
-                <h4 class = "mb3" >Five Day Forecast</h4>               
-                <div class="card-container">
-                    <!-- day 1  -->
-                    <div class="card text-center">
-                        <div class="card-header bg-light" id ="date1"></div>        
-                        <div class="card-body bg-light" id="day-1">    
-                            <img id ="img1"></img>
-                            <p id ="temp1"></p>
-                            <p id ="hum1"></p>
-                            <p id="wind1"></p> 
-                        </div>
-                        <div class="card-footer text-muted bg-light">Day 1</div>
-                    </div>
-                    <!-- day 1 end -->
-
-                    <!-- day 2 -->
-                    <div class="card text-center">
-                        <div class="card-header bg-light" id ="date2"></div>        
-                        <div class="card-body bg-light" id="day-2">    
-                            <img id ="img2"></img>
-                            <p id ="temp2"></p>
-                            <p id ="hum2"></p>
-                            <p id="wind2"></p> 
-                        </div>
-                        <div class="card-footer text-muted bg-light">Day 2</div>
-                    </div>
-                    <!-- day 2 end  -->
-
-                    <!-- day 3 -->
-                    <div class="card text-center">
-                        <div class="card-header bg-light" id ="date3"></div>        
-                        <div class="card-body bg-light" id="day-3">    
-                            <img id ="img3"></img>
-                            <p id ="temp3"></p>
-                            <p id ="hum3"></p>
-                            <p id="wind3"></p> 
-                        </div>
-                        <div class="card-footer text-muted bg-light">Day 3</div>
-                    </div>
-                    <!-- day 3 end  -->
-
-                    <!-- day 4 -->
-                    <div class="card text-center">
-                        <div class="card-header bg-light" id ="date4"></div>        
-                        <div class="card-body bg-light" id="day-4">    
-                            <img id ="img4"></img>
-                            <p id ="temp4"></p>
-                            <p id ="hum4"></p>
-                            <p id="wind4"></p> 
-                        </div>
-                        <div class="card-footer text-muted bg-light">Day 4</div>
-                    </div>
-                    <!-- day 4 end  -->
-
-                    <!-- day 5 -->
-                    <div class="card text-center">
-                        <div class="card-header bg-light" id ="date5"></div>        
-                        <div class="card-body bg-light" id="day-5">    
-                            <img id ="img5"></img>
-                            <p id ="temp5"></p>
-                            <p id ="hum5"></p>
-                            <p id="wind5"></p> 
-                        </div>
-                        <div class="card-footer text-muted bg-light">Day 5</div>
-                    </div>
-                    <!-- day 5 end  -->
-                </div>
-
-            </div> 
-        
-         </div>
-         <!-- forecast end -->
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
    
-       </div>  
-       <!-- main content end -->
+    <section class="main">
+      <section class="search">
+        <form class="search-form">
+          <label id="search-label" for="search-input">Search for a City:</label>
+          <input id="search-city" type="text" maxlength="25" onclick="this.select()"/>
+          <button class="btn btn-outline-primary" id="search-button">Search</button>
+          <select id="search-state">
+          <option selected disabled="disabled" value="">Select State</option>
+          <option value ="Alabama">Alabama</option>
+          <option value ="Alaska">Alaska</option>
+          <option value ="Arizona">Arizona</option>
+          <option value ="Arkansas">Arkansas</option>
+          <option value ="Califonia">Califonia</option>
+          <option value ="Colorado">Colorado</option>
+          <option value ="Connecticut">Connecticut</option>
+          <option value ="Delaware">Delaware</option>
+          <option value ="Florida">Florida</option>
+          <option value ="AGeorgia">Georgia</option>
+          <option value ="Hawaii">Hawaii</option>
+          <option value ="Idaho">Idaho</option>
+          <option value ="Illinois">Illinois</option>
+          <option value ="Indiana">Indiana</option>
+          <option value ="Iowa">Iowa</option>
+          <option value ="Kansas">Kansas</option>
+          <option value ="Kentucky">Kentucky</option>
+          <option value ="Louisiana">Louisiana</option>
+          <option value ="Maine">Maine</option>
+          <option value ="Maryland">Maryland</option>
+          <option value ="Massachusetts">Massachusetts</option>
+          <option value="Michigan">Michigan</option>
+          <option value="Minnesota">Minnesota</option>
+          <option value="Mississippi">Mississippi</option>
+          <option value="Missouri">Missouri</option>
+          <option value="Montana">Montana</option>
+          <option value="Nebraska">Nebraska</option>
+          <option value="Nevada">Nevada</option>
+          <option value="New Hampshire">New Hampshire</option>
+          <option value="New Jersey">New Jersey</option>
+          <option value="New Mexico">New Mexico</option>
+          <option value="New York">New York</option>
+          <option value="North Carolina">North Carolina</option>
+          <option value="North Dakota">North Dakota</option>
+          <option value="Ohio">Ohio</option>
+          <option value="Oklahoma">Oklahoma</option>
+          <option value="Oregon">Oregon</option>
+          <option value="Pennsylvania">Pennsylvania</option>
+          <option value="Rhode Island">Rhode Island</option>
+          <option value="South Carolina">South Carolina</option>
+          <option value="South Dakota">South Dakota</option>
+          <option value="Tenessee">Tenessee</option>
+          <option value="Texas">Texas</option>
+          <option value="Utah">Utah</option>
+          <option value="Vermont">Vermont</option>
+          <option value="Virginia">Virginia</option>
+          <option value="Washington">Washington</option>
+          <option value="West Virginia">West Virginia</option>
+          <option value="Wisconsin<">Wisconsin</option>
+          <option value="Wyoming">Wyoming</option>
+        </select>
+        </form>
+        <div id="search-history">
+            <h4 class=".search-items">History</h4>
+            <ul id="search-list">
 
-    </div>
-     <!-- main row end -->
+            </ul>
+        </div>
+      </section>
+      <section class="current-container">
+          <section id="display-current">
+              <h4 id="display-header"></h4>
+              <div id="display-temp" class="current-items"></div>
+              <div id="display-wind" class="current-items"></div>
+              <div id="display-humidity" class="current-items"></div>
+              <div id="display-uv" class="current-items"></div>
+          </section>
+          <h3 id="five-day-header">5-Day Forecast</h3>
+          <section id="display-forcast">
+              <article class="forecast-container" id="day-1">
+                  <div id="day-1-date" class="forecast-header"></div>
+                  <img id="day-1-img" class="forecast-items">
+                  <div id="day-1-temp-high" class="forecast-items"></div>
+                  <div id="day-1-temp-low" class="forecast-items"></div>
+                  <div id="day-1-wind" class="forecast-items"></div>
+                  <div id="day-1-humidity" class="forecast-items"></div>
+              </article>
+              <article class="forecast-container" id="day-2">
+                <div id="day-2-date" class="forecast-header"></div>
+                <img id="day-2-img" class="forecast-items">
+                <div id="day-2-temp-high" class="forecast-items"></div>
+                <div id="day-2-temp-low" class="forecast-items"></div>
+                <div id="day-2-wind" class="forecast-items"></div>
+                <div id="day-2-humidity" class="forecast-items"></div>
+              </article>
+              <article class="forecast-container" id="day-3">
+                <div id="day-3-date" class="forecast-header"></div>
+                <img id="day-3-img" class="forecast-items">
+                <div id="day-3-temp-high" class="forecast-items"></div>
+                <div id="day-3-temp-low" class="forecast-items"></div>
+                <div id="day-3-wind" class="forecast-items"></div>
+                <div id="day-3-humidity" class="forecast-items"></div>
+              </article>
+              <article class="forecast-container" id="day-4">
+                <div id="day-4-date" class="forecast-header"></div>
+                <img id="day-4-img" class="forecast-items">
+                <div id="day-4-temp-high" class="forecast-items"></div>
+                <div id="day-4-temp-low" class="forecast-items"></div>
+                <div id="day-4-wind" class="forecast-items"></div>
+                <div id="day-4-humidity" class="forecast-items"></div>
+              </article>
+              <article class="forecast-container" id="day-5">
+                <div id="day-5-date" class="forecast-header"></div>
+                <img id="day-5-img" class="forecast-items">
+                <div id="day-5-temp-high" class="forecast-items"></div>
+                <div id="day-5-temp-low" class="forecast-items"></div>
+                <div id="day-5-wind" class="forecast-items"></div>
+                <div id="day-5-humidity" class="forecast-items"></div>
+              </article>
+          </section>
+        </section>
+      </section>
+    </section>
+    <script src="./assets/script/script.js"></script>
+    <script type="text/javascript" src="/assets/script/all.min.js"></script>
 
-
-
-
-
-
-
-
-
- </div>
-    <!-- End your project here-->
-
-    <script type="text/javascript" src="./assets/js/mdb.min.js"></script>
-    <script src="./assets/js/script.js"></script>
   </body>
 </html>
