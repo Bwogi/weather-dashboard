@@ -20,7 +20,7 @@ SO THAT I can plan a trip accordingly
 * Server-side APIS 
 
 ## Screenshot
-![screenshot](./assets/img/localStorageWeatherScreenshort.png?raw=true "Weather App Screenshot")
+![screenshot](/assets/images/weather-dashboard-screenshot.png?raw=true "Weather App Screenshot")
 
 ## Pseudocode:
 ## Data/API endpoints source :
